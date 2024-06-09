@@ -12,9 +12,19 @@ body.loaded {
     opacity: 1;
 }
 
+.fade-in {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+.fade-in.loaded {
+    opacity: 1;
+}
+
+/* Specific styles */
 header {
     text-align: center;
-    background-color: #000; /* Header black */
+    background-color: #000;
     color: #fff;
     position: fixed;
     width: 100%;
@@ -88,7 +98,7 @@ nav ul li a.active {
 }
 
 .hero {
-    background-image: url('/ImagesFiles/book2.jpg');
+    background-image: url('/Images Files/book2.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -251,16 +261,6 @@ footer .social a {
 
 footer .social a:hover {
     color: #fff;
-}
-
-/* Fade-in animation */
-.fade-in {
-    opacity: 0;
-    transition: opacity 2s ease-in;
-}
-
-.fade-in.loaded {
-    opacity: 1;
 }
 
 /* Media Queries for responsiveness */
