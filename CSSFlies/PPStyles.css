@@ -213,7 +213,7 @@ nav ul li a.active {
     border: none;
     border-radius: 5px 0 0 5px;
     font-size: 1em;
-    width: 250px; /* Make the email input shorter */
+    width: 200px; /* Make the email input shorter */
 }
 
 .cta button {
