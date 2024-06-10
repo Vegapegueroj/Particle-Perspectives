@@ -174,9 +174,10 @@ nav ul li a.active {
 }
 
 .cta p {
-    max-width: 600px;
-    margin: 20px auto;
-    line-height: 1.6;
+    font-size: 1.1em;
+    margin: 0 auto 20px auto;
+    line-height: 1.5;
+    max-width: 600px; /* Compress text to center */
 }
 
 #subscribe-form {
