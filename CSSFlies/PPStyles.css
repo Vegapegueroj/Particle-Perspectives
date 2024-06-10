@@ -88,7 +88,7 @@ nav ul li a.active {
 }
 
 .hero {
-    background-image: url('/ImagesFiles/Book2.jpg');
+    background-image: url('/ImagesFiles/book2.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -150,22 +150,44 @@ nav ul li a.active {
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .paper img,
 .blog-post img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.paper h4,
+.blog-post h4 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+.paper p,
+.blog-post p {
+    line-height: 1.5;
+    color: #333;
+}
+
+.blog-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
     margin-bottom: 10px;
 }
 
 .cta {
     text-align: center;
-    padding: 60px 20px;
-    background-color: #34495e;
+    background-color: #2c3e50;
     color: #fff;
+    padding: 40px 20px;
+    margin-bottom: 0; /* Ensure no gap between sections */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cta h2 {
@@ -180,59 +202,109 @@ nav ul li a.active {
     max-width: 600px; /* Compress text to center */
 }
 
-#subscribe-form {
-    margin-top: 20px;
+.cta form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#subscribe-form input[type="email"] {
+.cta input[type="email"] {
     padding: 10px;
-    border-radius: 5px;
     border: none;
-    width: 70%;
-    margin-right: 10px;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+    width: 250px; /* Make the email input shorter */
 }
 
-#subscribe-form button {
+.cta button {
     padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
     background-color: #e67e22;
     color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-#subscribe-form button:hover {
+.cta button:hover {
     background-color: #d35400;
+    transform: translateY(-2px);
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #000000;
+    background-color: #2c3e50; /* Footer dark background color */
     color: #fff;
+    padding: 20px 0;
 }
 
 footer p {
-    margin: 0;
-}
-
-footer .social {
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 footer .social a {
     color: #e67e22;
     margin: 0 10px;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
+footer .social a:hover {
+    color: #fff;
+}
+
+/* Fade-in animation */
 .fade-in {
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in;
 }
 
 .fade-in.loaded {
     opacity: 1;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .research-papers,
+    .featured-blog {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .introduction h2 {
+        font-size: 1.5em;
+    }
+
+    .cta h2 {
+        font-size: 1.8em;
+    }
+
+    .cta p {
+        font-size: 1em;
+    }
+
+    header {
+        padding: 15px 0;
+    }
 }
 
