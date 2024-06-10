@@ -88,7 +88,7 @@ nav ul li a.active {
 }
 
 .hero {
-    background-image: url("ImagesFiles/Book.jpg");
+    background-image: url('main/ImagesFiles/Book.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
