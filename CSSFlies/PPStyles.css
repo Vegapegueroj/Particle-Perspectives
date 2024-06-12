@@ -308,3 +308,33 @@ footer .social a:hover {
     }
 }
 
+/* Add this to your existing CSS */
+
+/* General styles for read more button */
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.read-more::after {
+    content: ' →';
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.read-more:hover {
+    color: #d35400;
+}
+
+.read-more:hover::after {
+    margin-left: 5px;
+}
+
+/* Ensure proper padding for paper divs to fit button */
+.paper {
+    padding: 20px;
+}
+
