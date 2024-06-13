@@ -60,27 +60,24 @@ header nav ul li a:hover {
 }
 
 .hero {
-    background-image: url('/ImagesFiles/Book.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* Align items to the bottom */
     justify-content: center;
     color: #fff;
     text-align: center;
-    padding: 0 20px;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
-    margin-top: 80px; /* Adjust for fixed header */
+    padding: 20px 20px 40px 20px; /* Added extra bottom padding */
+    height: 300px; /* Increased height */
 }
 
 .hero h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 2.5em;
+    max-width: 800px; /* Added max-width to limit text width */
+    margin: 0 auto; /* Center the text */
 }
 
 .introduction {
-    padding: 60px 20px;
+    padding: 40px 20px; /* Reduced padding */
     text-align: center;
     background-color: #000;
     color: #ffffff;
@@ -102,7 +99,7 @@ header nav ul li a:hover {
     display: flex;
     justify-content: space-around;
     padding: 40px 20px;
-    background-color: #fff; /* White background */
+    background-color: #f4f4f4; /* Light grey background */
     color: #000; /* Black text */
     opacity: 0;
     animation: fadeInContent 2s forwards;
@@ -112,7 +109,7 @@ header nav ul li a:hover {
 .featured-blog {
     width: 45%;
     padding: 20px;
-    background-color: #fff; /* White background */
+    background-color: #f4f4f4; /* Light grey background */
     color: #000; /* Black text */
     opacity: 0;
     animation: fadeInSection 3s forwards;
@@ -121,38 +118,65 @@ header nav ul li a:hover {
 
 .research-papers h2,
 .featured-blog h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
+    font-weight: bold;
     margin-bottom: 20px;
     color: #000; /* Black text */
     font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
+    text-align: center; /* Center the text */
 }
 
 .paper,
 .blog-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
     background-color: #fff; /* White background */
     padding: 20px;
     margin-bottom: 20px;
-    border: 1px solid #000; /* Black border */
-    color: #000; /* Black text */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    text-align: center; /* Center the text */
 }
 
-.paper img,
-.blog-post img {
+.paper:hover, .blog-post:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.paper-image, .blog-post-image {
     width: 100%;
     height: auto;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.paper h4,
-.blog-post h4 {
-    margin-top: 0;
-    font-size: 1.2em;
-    color: #000; /* Black text */
+.paper-image img, .blog-post-image img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Ensures the image fits within the box */
+    object-fit: contain; /* Ensure the entire image is visible within the container */
+    border-radius: 0; /* Remove rounded corners */
 }
 
-.paper p,
-.blog-post p {
-    line-height: 1.5;
+.paper-content, .blog-post-content {
+    padding: 15px;
+}
+
+.paper h4, .blog-post h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
+}
+
+.paper p, .blog-post p {
+    font-size: 1em;
+    line-height: 1.6;
     color: #333; /* Dark grey text */
 }
 
@@ -200,8 +224,8 @@ footer {
     padding: 8px;
     border: none;
     border-radius: 3px 0 0 3px;
-    margin-right: 5px;
     font-size: 14px;
+    margin-right: -5px; /* Overlap the input and button */
 }
 
 .footer-content form button {
@@ -213,6 +237,7 @@ footer {
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s;
+    margin-left: -5px; /* Overlap the input and button */
 }
 
 .footer-content form button:hover {
