@@ -56,5 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
     });
-});
 
+    // Trigger fade in for content and papers
+    document.querySelector('.content').style.opacity = 1;
+    document.querySelectorAll('.research-papers, .featured-blog').forEach(function(section) {
+        section.style.opacity = 1;
+    });
+});

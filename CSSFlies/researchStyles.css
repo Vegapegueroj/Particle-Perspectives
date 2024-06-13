@@ -1,0 +1,235 @@
+/* General styles for the body */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+    background-color: #ccc; /* Light grey background */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    background-color: #000; /* Black background */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+header .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Main content styles */
+.content {
+    flex: 1; /* Allow content to grow and take available space */
+    padding-top: 100px; /* Adjust for fixed header and add extra space */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto; /* Ensure content can scroll if it overflows */
+    padding-bottom: 20px; /* Add space at the bottom for pagination */
+}
+
+/* Research paper content styles */
+.research-paper-content {
+    padding: 60px 20px;
+    max-width: 800px;
+    width: 100%; /* Make content responsive */
+    background-color: #fff; /* Ensure the background is white */
+    color: #000;
+    border: 1px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 20px; /* Add margin for better spacing */
+}
+
+.research-paper-content h1, .research-paper-content h2 {
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.research-paper-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.research-paper-content h2 {
+    font-size: 18px;
+    margin: 40px 0 20px;
+}
+
+.research-paper-content p {
+    text-align: center; /* Center the text */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.abstract, .introduction, .methods, .sample-data, .results, .references, .additional-content {
+    background-color: #fff; /* Ensure the background is white */
+}
+
+.centered {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-space {
+    height: 60px;
+}
+
+/* Page number styles */
+.page-number {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 12px;
+    color: #000;
+}
+
+/* Pagination styles */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    margin: 0 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Footer styles */
+footer {
+    background-color: #000; /* Black background */
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Add top shadow */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-content .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-content .social-icons a:hover {
+    color: #e67e22;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+/* Hide all pages by default */
+.page {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content .footer-left, .footer-content .footer-right {
+        margin-bottom: 20px;
+    }
+
+    .research-paper-content {
+        padding: 40px 10px;
+    }
+
+    header .logo a {
+        font-size: 1.2em;
+    }
+
+    header nav ul li {
+        margin: 0 5px;
+    }
+
+    header nav ul li a {
+        padding: 5px;
+    }
+}

@@ -1,9 +1,11 @@
 /* General styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -27,20 +29,13 @@ header {
 header .logo a {
     color: #fff;
     text-decoration: none;
-}
-
-header .logo {
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-weight: bold;
-    line-height: 1;
-    margin-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 0;
 }
 
-header nav {
-    margin-top: 10px;
-}
-
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -48,43 +43,20 @@ nav ul {
     justify-content: center;
 }
 
-nav ul li {
-    margin: 0 15px;
+header nav ul li {
+    margin: 0 10px;
 }
 
-nav ul li a {
+header nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 5px 10px;
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
 }
 
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #e67e22;
-    transform: scaleX(0);
-    transition: transform 0.3s;
-}
-
-nav ul li a:hover::before,
-nav ul li a.active::before {
-    transform: scaleX(1);
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    background-color: rgba(230, 126, 34, 0.2);
+header nav ul li a:hover {
+    background-color: #555;
     color: #fff;
-    transform: translateY(-2px);
 }
 
 .hero {
@@ -110,7 +82,7 @@ nav ul li a.active {
 .introduction {
     padding: 60px 20px;
     text-align: center;
-    background-color: #2c3e50;
+    background-color: #000;
     color: #ffffff;
     margin-top: 0; /* Remove gap between sections */
 }
@@ -130,34 +102,44 @@ nav ul li a.active {
     display: flex;
     justify-content: space-around;
     padding: 40px 20px;
-    background-color: #fff;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    opacity: 0;
+    animation: fadeInContent 2s forwards;
 }
 
 .research-papers,
 .featured-blog {
     width: 45%;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    opacity: 0;
+    animation: fadeInSection 3s forwards;
+    animation-delay: 1s;
 }
 
 .research-papers h2,
 .featured-blog h2 {
     font-size: 1.5em;
     margin-bottom: 20px;
+    color: #000; /* Black text */
+    font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
 }
 
 .paper,
 .blog-post {
-    background-color: #f4f4f4;
+    background-color: #fff; /* White background */
     padding: 20px;
-    border-radius: 5px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #000; /* Black border */
+    color: #000; /* Black text */
 }
 
 .paper img,
 .blog-post img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
     margin-bottom: 15px;
 }
 
@@ -165,92 +147,111 @@ nav ul li a.active {
 .blog-post h4 {
     margin-top: 0;
     font-size: 1.2em;
-    color: #2c3e50;
+    color: #000; /* Black text */
 }
 
 .paper p,
 .blog-post p {
     line-height: 1.5;
-    color: #333;
+    color: #333; /* Dark grey text */
 }
 
-.blog-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.cta {
-    text-align: center;
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 40px 20px;
-    margin-bottom: 0; /* Ensure no gap between sections */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.cta h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.cta p {
-    font-size: 1.1em;
-    margin: 0 auto 20px auto;
-    line-height: 1.5;
-    max-width: 600px; /* Compress text to center */
-}
-
-.cta form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cta input[type="email"] {
-    padding: 10px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    font-size: 1em;
-    width: 200px; /* Make the email input shorter */
-}
-
-.cta button {
-    padding: 10px 20px;
-    background-color: #e67e22;
-    color: #fff;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.cta button:hover {
-    background-color: #d35400;
-    transform: translateY(-2px);
-}
-
-footer {
-    text-align: center;
-    background-color: #000000; /* Footer dark background color */
-    color: #fff;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 10px 0;
-}
-
-footer .social a {
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
     color: #e67e22;
-    margin: 0 10px;
     text-decoration: none;
+    font-weight: bold;
     transition: color 0.3s;
 }
 
-footer .social a:hover {
+.read-more:hover {
+    color: #d35400;
+}
+
+footer {
+    background-color: #000; /* Black background */
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Add top shadow */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-content form {
+    display: flex;
+    align-items: center;
+}
+
+.footer-content form input[type="email"] {
+    padding: 8px;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.footer-content form button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #e67e22;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.footer-content form button:hover {
+    background-color: #d35400;
+}
+
+.footer-content .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-content .social-icons a:hover {
+    color: #e67e22;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
     color: #fff;
 }
 
@@ -262,6 +263,19 @@ footer .social a:hover {
 
 .fade-in.loaded {
     opacity: 1;
+}
+
+/* Keyframe animations for fade-in effect */
+@keyframes fadeInContent {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSection {
+    to {
+        opacity: 1;
+    }
 }
 
 /* Media Queries for responsiveness */
@@ -284,6 +298,15 @@ footer .social a:hover {
     nav ul li {
         margin: 10px 0;
     }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content .footer-left, .footer-content .footer-center, .footer-content .footer-right {
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -295,46 +318,7 @@ footer .social a:hover {
         font-size: 1.5em;
     }
 
-    .cta h2 {
-        font-size: 1.8em;
-    }
-
-    .cta p {
-        font-size: 1em;
-    }
-
     header {
         padding: 15px 0;
     }
 }
-
-/* Add this to your existing CSS */
-
-/* General styles for read more button */
-.read-more {
-    display: inline-block;
-    margin-top: 10px;
-    color: #e67e22;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
-
-.read-more::after {
-    content: ' →';
-    transition: margin-left 0.3s ease-in-out;
-}
-
-.read-more:hover {
-    color: #d35400;
-}
-
-.read-more:hover::after {
-    margin-left: 5px;
-}
-
-/* Ensure proper padding for paper divs to fit button */
-.paper {
-    padding: 20px;
-}
-
