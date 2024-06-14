@@ -96,8 +96,6 @@ header nav ul li a:hover {
 }
 
 .content {
-    display: flex;
-    justify-content: space-around;
     padding: 40px 20px;
     background-color: #f4f4f4; /* Light grey background */
     color: #000; /* Black text */
@@ -107,13 +105,14 @@ header nav ul li a:hover {
 
 .research-papers,
 .featured-blog {
-    width: 45%;
+    width: 100%;
     padding: 20px;
     background-color: #f4f4f4; /* Light grey background */
     color: #000; /* Black text */
     opacity: 0;
     animation: fadeInSection 3s forwards;
     animation-delay: 1s;
+    text-align: center; /* Center the section titles */
 }
 
 .research-papers h2,
@@ -126,6 +125,12 @@ header nav ul li a:hover {
     text-align: center; /* Center the text */
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
 .paper,
 .blog-post {
     display: flex;
@@ -133,7 +138,6 @@ header nav ul li a:hover {
     align-items: center; /* Center the content */
     background-color: #fff; /* White background */
     padding: 20px;
-    margin-bottom: 20px;
     border: 1px solid #ddd; /* Light grey border */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -194,41 +198,47 @@ header nav ul li a:hover {
 }
 
 footer {
-    background-color: #000; /* Black background */
+    text-align: center;
+    background-color: #000; /* Footer dark background color */
     color: #fff;
     padding: 20px 0;
-    width: 100%;
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Add top shadow */
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: 1000px;
     margin: 0 auto;
     padding: 10px 20px;
     text-align: left;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-.footer-content h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    text-align: center;
 }
 
-.footer-content form {
+.footer-center {
+    margin: 10px 0;
+}
+
+.footer-center form {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
-.footer-content form input[type="email"] {
+.footer-center form input[type="email"] {
     padding: 8px;
     border: none;
     border-radius: 3px 0 0 3px;
     font-size: 14px;
-    margin-right: -5px; /* Overlap the input and button */
 }
 
-.footer-content form button {
+.footer-center form button {
     padding: 8px 12px;
     border: none;
     background-color: #e67e22;
@@ -237,22 +247,26 @@ footer {
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s;
-    margin-left: -5px; /* Overlap the input and button */
 }
 
-.footer-content form button:hover {
+.footer-center form button:hover {
     background-color: #d35400;
 }
 
-.footer-content .social-icons a {
+.footer-right .social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-right .social-icons a {
     color: #fff;
     text-decoration: none;
-    margin-right: 10px;
+    margin: 0 10px;
     font-size: 20px;
     transition: color 0.3s;
 }
 
-.footer-content .social-icons a:hover {
+.footer-right .social-icons a:hover {
     color: #e67e22;
 }
 
@@ -264,7 +278,7 @@ footer {
 }
 
 .footer-bottom p {
-    margin: 0;
+    margin: 5px 0;
     color: #ccc;
     font-size: 12px;
 }
@@ -304,24 +318,26 @@ footer {
 }
 
 /* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
-    .research-papers,
-    .featured-blog {
-        width: 100%;
-        margin-bottom: 20px;
+    .paper,
+    .blog-post {
+        max-width: 90%;
     }
 
-    nav ul {
+    header nav ul {
         flex-direction: column;
     }
 
-    nav ul li {
+    header nav ul li {
         margin: 10px 0;
+    }
+
+    footer {
+        padding: 15px 0;
     }
 
     .footer-content {
@@ -329,8 +345,26 @@ footer {
         align-items: center;
     }
 
-    .footer-content .footer-left, .footer-content .footer-center, .footer-content .footer-right {
-        margin-bottom: 20px;
+    .footer-right {
+        margin-top: 10px;
+    }
+
+    .footer-center {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .introduction h2 {
+        font-size: 1.8em;
+    }
+
+    header {
+        padding: 15px 0;
     }
 }
 
@@ -345,5 +379,27 @@ footer {
 
     header {
         padding: 15px 0;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .paper,
+    .blog-post {
+        max-width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-right {
+        margin-top: 10px;
+    }
+
+    .footer-center {
+        margin: 20px 0;
     }
 }
