@@ -107,6 +107,20 @@ main #research p {
     line-height: 1.5;
 }
 
+.explore-button {
+    background-color: black;
+    color: orange;
+    border: 1px solid orange;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em; /* Ensure it is below the summary */
+}
+
+.explore-button:hover {
+    background-color: #333;
+}
+
 footer {
     background-color: black;
     color: white;
