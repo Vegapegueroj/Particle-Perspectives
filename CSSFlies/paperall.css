@@ -2,8 +2,8 @@ body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: white;
+    background-color: #f4f4f4;
+    color: #000;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -28,6 +28,7 @@ header .container {
 header h1 {
     margin: 0;
     font-size: 1.5em;
+    color: white;
 }
 
 header nav a {
@@ -53,17 +54,52 @@ main #paper {
     margin-bottom: 2em;
 }
 
-main #paper h2 {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 1em;
+.pdf-content {
+    background-color: #fff;
+    color: #000;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    max-width: 800px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px; /* Adjusted for the example font size */
+    line-height: 1.6;
 }
 
-main #paper p {
-    font-size: 1.2em;
-    line-height: 1.4;
-    margin: 0 auto;
-    width: 80%;
+.pdf-content h1 {
+    text-align: center;
+    font-size: 24px; /* Adjusted for the example font size */
+    margin-bottom: 1em;
+    font-weight: normal;
+}
+
+.pdf-content h2 {
+    text-align: center;
+    font-size: 18px; /* Adjusted for the example font size */
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+.pdf-content h3 {
+    font-size: 16px; /* Adjusted for the example font size */
+    margin-top: 1.5em;
+    font-weight: bold;
+}
+
+.pdf-content p {
+    margin-top: 0.5em;
+    text-align: justify; /* Justify text for a more professional look */
+    font-size: 14px; /* Adjusted for the example font size */
+}
+
+.center {
+    text-align: center;
+    margin: 1em 0;
+    font-size: 14px; /* Adjusted for the example font size */
 }
 
 footer {

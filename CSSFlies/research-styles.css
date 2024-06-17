@@ -86,6 +86,9 @@ main #research p {
     background-color: #222;
     padding: 1em;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .research-item img,
@@ -105,20 +108,24 @@ main #research p {
     font-size: 1em;
     text-indent: 0;
     line-height: 1.5;
+    margin-bottom: 1em;
 }
 
 .explore-button {
-    background-color: black;
+    background-color: transparent; /* Remove background */
     color: orange;
-    border: 1px solid orange;
+    font-weight: bold; /* Make text bold */
+    border: none; /* Remove border */
     padding: 0.5em 1em;
-    border-radius: 5px;
     cursor: pointer;
-    margin-top: 1em; /* Ensure it is below the summary */
+    text-align: center;
+    display: block;
+    width: calc(100% - 2em); /* Match the width of the parent container */
+    margin: 1em auto 0; /* Center align with margin */
 }
 
 .explore-button:hover {
-    background-color: #333;
+    text-decoration: underline; /* Add underline on hover */
 }
 
 footer {
